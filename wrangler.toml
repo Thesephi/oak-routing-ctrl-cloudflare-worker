@@ -1,4 +1,4 @@
-name = "oak-routing-ctrl-cloudflare"
+name = "oak-routing-ctrl-cloudflare-worker"
 main = "src/index.ts"
 compatibility_date = "2024-06-17"
 workers_dev = true
