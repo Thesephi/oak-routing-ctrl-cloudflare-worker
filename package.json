@@ -1,0 +1,18 @@
+{
+  "name": "oak-routing-ctrl-cloudflare-worker",
+  "description": "oak-routing-ctrl starter template to develop a Cloudflare Worker module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "start": "wrangler dev"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  },
+  "dependencies": {
+    "@dklab/oak-routing-ctrl": "npm:@jsr/dklab__oak-routing-ctrl@^0.7.3",
+    "@oak/oak": "npm:@jsr/oak__oak@^16.1.0"
+  }
+}
