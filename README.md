@@ -9,8 +9,10 @@ Read more:
 
 # How to use this template
 
-This template contains only a minimal set of files needed to develop & deploy a Cloudflare Worker application. You're welcome to use it in whichever way you like, e.g. copying all the
+This template contains only a minimal set of files needed to develop & deploy a Cloudflare Workers application. You're welcome to use it in whichever way you like, e.g. copying all the
 files, or selected files to mix & match as per your project needs.
+
+Pro-tip: executing `npm create oak-cloudflare-worker@latest` is the fastest way to clone this template to your local machine.
 
 # Example Deployment
 
