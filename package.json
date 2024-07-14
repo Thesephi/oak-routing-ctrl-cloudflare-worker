@@ -6,13 +6,15 @@
   "scripts": {
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
-    "start": "wrangler dev"
+    "start": "wrangler dev",
+    "test": "vitest"
   },
   "dependencies": {
     "@dklab/oak-routing-ctrl": "npm:@jsr/dklab__oak-routing-ctrl@^0.8.6",
     "@oak/oak": "npm:@jsr/oak__oak@^16.1.0"
   },
   "devDependencies": {
+    "vitest": "^2.0.2",
     "wrangler": "^3.64.0"
   }
 }
