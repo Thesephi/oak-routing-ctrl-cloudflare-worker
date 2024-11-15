@@ -2,7 +2,6 @@
   "name": "oak-routing-ctrl-cloudflare",
   "description": "oak-routing-ctrl starter template to develop a Cloudflare Workers app",
   "version": "0.0.0",
-  "private": true,
   "scripts": {
     "deploy": "wrangler deploy",
     "dev": "wrangler dev",
@@ -10,11 +9,11 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@dklab/oak-routing-ctrl": "npm:@jsr/dklab__oak-routing-ctrl@^0.9.0",
-    "@oak/oak": "npm:@jsr/oak__oak@^16.1.0"
+    "@dklab/oak-routing-ctrl": "npm:@jsr/dklab__oak-routing-ctrl@^0.12.1",
+    "@oak/oak": "npm:@jsr/oak__oak@^17.1.3"
   },
   "devDependencies": {
-    "vitest": "^2.0.3",
-    "wrangler": "^3.65.0"
+    "vitest": "^2.1.5",
+    "wrangler": "^3.87.0"
   }
 }

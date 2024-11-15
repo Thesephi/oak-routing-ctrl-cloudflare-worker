@@ -37,4 +37,9 @@ export class CfwController {
     console.log(`${ctx.params.name} is the same as ${param.name}`);
     return { query, body, param, headers };
   }
+  @Get("/package")
+  public printPackageInfo() {
+    const pkg = require("../package.json");
+    return pkg;
+  }
 }

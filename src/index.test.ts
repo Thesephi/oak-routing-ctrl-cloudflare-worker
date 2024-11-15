@@ -4,12 +4,9 @@ import { describe, expect, it, beforeAll, afterAll } from "vitest";
 
 describe("oak-routing-ctrl-cloudflare", () => {
   let worker: UnstableDevWorker;
-  let workerUrl: string;
 
   beforeAll(async () => {
     worker = await unstable_dev("src/index.ts", { experimental: { disableExperimentalWarning: true } });
-    const { protocol, hostname, port } = worker.proxyData.userWorkerUrl;
-    workerUrl = `${protocol}//${hostname}:${port}`;
   });
 
   afterAll(async () => {
@@ -17,7 +14,7 @@ describe("oak-routing-ctrl-cloudflare", () => {
   });
 
   it("should return 200 response with expected data", async () => {
-    const resp = await worker.fetch(`${workerUrl}/echo/tester`, {
+    const resp = await worker.fetch(`/echo/tester`, {
       method: "post",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({ foo: "bar" }),
@@ -32,7 +29,7 @@ describe("oak-routing-ctrl-cloudflare", () => {
   });
 
   it("should serve Open API Spec", async () => {
-    const resp = await worker.fetch(`${workerUrl}/oas.json`);
+    const resp = await worker.fetch(`/oas.json`);
     expect(resp.status).toBe(200);
 
     const respData = await resp.json();
