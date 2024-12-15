@@ -21,6 +21,11 @@ exports[`oak-routing-ctrl-cloudflare > should serve Open API Spec 1`] = `
             "name": "name",
             "required": true,
             "schema": {
+              "enum": [
+                "alice",
+                "bob",
+                "carol",
+              ],
               "type": "string",
             },
           },
@@ -69,6 +74,11 @@ exports[`oak-routing-ctrl-cloudflare > should serve Open API Spec 1`] = `
             "name": "name",
             "required": true,
             "schema": {
+              "enum": [
+                "alice",
+                "bob",
+                "carol",
+              ],
               "type": "string",
             },
           },
@@ -101,6 +111,30 @@ exports[`oak-routing-ctrl-cloudflare > should serve Open API Spec 1`] = `
                     "body",
                     "param",
                     "headers",
+                  ],
+                  "type": "object",
+                },
+              },
+            },
+            "description": "Success response",
+          },
+        },
+      },
+    },
+    "/version": {
+      "get": {
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "version": {
+                      "type": "string",
+                    },
+                  },
+                  "required": [
+                    "version",
                   ],
                   "type": "object",
                 },

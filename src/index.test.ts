@@ -1,9 +1,9 @@
 import { unstable_dev } from "wrangler";
-import type { UnstableDevWorker } from "wrangler";
+import type { Unstable_DevWorker } from "wrangler";
 import { describe, expect, it, beforeAll, afterAll } from "vitest";
 
 describe("oak-routing-ctrl-cloudflare", () => {
-  let worker: UnstableDevWorker;
+  let worker: Unstable_DevWorker;
 
   beforeAll(async () => {
     worker = await unstable_dev("src/index.ts", { experimental: { disableExperimentalWarning: true } });
@@ -25,6 +25,15 @@ describe("oak-routing-ctrl-cloudflare", () => {
     expect(respData).toMatchObject({
       body: { foo: "bar" },
       param: { name: "tester" },
+    });
+  });
+
+  it("should serve /version", async () => {
+    const resp = await worker.fetch(`/version`);
+    const respData = await resp.json();
+    const actualVersion = require("../package.json").version;
+    expect(respData).toEqual({
+      version: actualVersion
     });
   });
 
